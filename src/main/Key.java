@@ -40,4 +40,12 @@ public class Key {
 		return (float) (440 * Math.pow(2, (12 * (octave - 4) + tones[note] - 49) / 12F));
 	}
 
+	public static Note flat(Note note) {
+		return note.setFrequency((float) (note.getFrequency() / Math.pow(2, 1 / 12)));
+	}
+
+	public static Note sharp(Note note) {
+		return note.setFrequency((float) (note.getFrequency() * Math.pow(2, 1 / 12)));
+	}
+
 }

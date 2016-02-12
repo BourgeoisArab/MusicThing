@@ -23,6 +23,10 @@ public class Key {
 	 * Major or minor key
 	 */
 	private boolean major;
+
+	/**
+	 * Stores semitone values, relative to tonic (0) Index of this is a relative note on the scale
+	 */
 	private int[] tones;
 
 	public Key(float frequency, boolean major) {

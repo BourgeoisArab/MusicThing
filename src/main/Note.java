@@ -1,4 +1,5 @@
 package main;
+import java.util.*;
 
 public class Note {
 
@@ -10,15 +11,15 @@ public class Note {
 	/**
 	 * Absolute frequency
 	 */
-	private float freq;
+	private double freq;
 
 	/**
 	 * Duration, relative to that of a semi-breve <br>
 	 * eg. crotchet = 1/4, minim = 1/2
 	 */
-	private float duration;
+	private double duration;
 
-	public Note(int pitch, float freq, float duration) {
+	public Note(int pitch, double freq, double duration) {
 		if (pitch < 0 || pitch > 6 || freq < 0 || duration < 0) {
 			throw new IllegalArgumentException();
 		}
@@ -26,21 +27,27 @@ public class Note {
 		this.freq = freq;
 		this.duration = duration;
 	}
-
-	public float getFrequency() {
+        
+        // A get method for all properties. 
+        public List<Object> getList()
+        {
+            return new ArrayList<>(Arrays.asList(pitch,freq,duration));
+        }
+        
+	public double getFrequency() {
 		return freq;
 	}
 
-	public float getDuration() {
+	public double getDuration() {
 		return duration;
 	}
 
-	public Note setFrequency(float freq) {
+	public Note setFrequency(double freq) {
 		this.freq = freq;
 		return this;
 	}
 
-	public Note setDuration(float duration) {
+	public Note setDuration(double duration) {
 		this.duration = duration;
 		return this;
 	}
@@ -52,5 +59,4 @@ public class Note {
 	public void setPitch(int pitch) {
 		this.pitch = pitch;
 	}
-
 }

@@ -14,10 +14,7 @@ public class Timeline {
     
     public Note NextNote()
     {
-        if(timeline.isEmpty())
-            return null;
-        else
-            return timeline.get(t++);
+        return ( timeline.isEmpty() ? null : timeline.get(t++) );
     }
     
     public boolean AppendNote(Note e)

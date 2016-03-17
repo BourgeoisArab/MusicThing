@@ -34,7 +34,7 @@ public class Note {
             return new ArrayList<>(Arrays.asList(pitch,freq,duration));
         }
         
-	public double getFrequency() {
+	public float getFrequency() {
 		return freq;
 	}
 

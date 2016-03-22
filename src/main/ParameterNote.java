@@ -11,11 +11,23 @@ public class ParameterNote extends Note {
         timeSignature = ts;
     }
     
-    public int[] GetTimeSig() { return timeSignature; }
+    public int[] GetTimeSig() 
+    { 
+        return timeSignature; 
+    }
     
-    public void SetTimeSig(int[] ts) { timeSignature = ts; }
+    public void SetTimeSig(int[] ts) 
+    { 
+        timeSignature = ts; 
+    }
     
-    public Key GetKey() { return key; }
+    public Key GetKey() 
+    { 
+        return key; 
+    }
     
-    public void SetKey(Key k) { key = k; }
+    public void SetKey(Key k) 
+    { 
+        key = k; 
+    }
 }

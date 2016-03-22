@@ -10,7 +10,7 @@ public class Note {
 	/**
 	 * Absolute frequency
 	 */
-	private float freq;
+	private float frequency;
 
 	/**
 	 * Duration, relative to that of a semi-breve <br>
@@ -18,31 +18,31 @@ public class Note {
 	 */
 	private float duration;
 
-	public Note(int pitch, float freq, float duration) {
-		if (pitch < 0 || pitch > 6 || freq < 0 || duration < 0) {
+	public Note(int pitch, float frequency, float duration) {
+		if (pitch < 0 || pitch > 6 || frequency < 0 || duration < 0) {
 			throw new IllegalArgumentException();
 		}
 		this.pitch = pitch;
-		this.freq = freq;
+		this.frequency = frequency;
 		this.duration = duration;
 	}
         
         // A get method for all properties. 
         public Object[] getList()
         {
-            return new Object[]{pitch,freq,duration};
+            return new Object[]{pitch,frequency,duration};
         }
         
 	public float getFrequency() {
-		return freq;
+		return frequency;
 	}
 
 	public float getDuration() {
 		return duration;
 	}
 
-	public Note setFrequency(float freq) {
-		this.freq = freq;
+	public Note setFrequency(float frequency) {
+		this.frequency = frequency;
 		return this;
 	}
 

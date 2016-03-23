@@ -7,7 +7,7 @@ import java.util.List;
 public class Timeline {
 
 	private int t;
-	private List<Note> timeline;
+	public List<Note> timeline;
 
 	public Timeline() {
 		timeline = new ArrayList<Note>();
@@ -17,13 +17,5 @@ public class Timeline {
 
 	public Note NextNote() {
 		return timeline.isEmpty() ? null : timeline.get(t++);
-	}
-
-	public boolean AppendNote(Note e) {
-		return timeline.add(e);
-	}
-
-	public boolean AppendNote(Collection<Note> c) {
-		return timeline.addAll(c);
-	}
+	}      
 }

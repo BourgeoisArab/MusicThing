@@ -1,4 +1,4 @@
-package main;
+package core;
 
 public class Note {
 
@@ -26,13 +26,12 @@ public class Note {
 		this.frequency = frequency;
 		this.duration = duration;
 	}
-        
-        // A get method for all properties. 
-        public Object[] getList()
-        {
-            return new Object[]{pitch,frequency,duration};
-        }
-        
+
+	// A get method for all properties.
+	public Object[] getList() {
+		return new Object[]{pitch, frequency, duration};
+	}
+
 	public float getFrequency() {
 		return frequency;
 	}

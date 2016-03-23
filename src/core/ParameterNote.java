@@ -1,4 +1,4 @@
-package main;
+package core;
 
 public abstract class ParameterNote extends Note {
 

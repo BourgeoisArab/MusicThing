@@ -3,14 +3,9 @@ package core;
 public class Note {
 
 	/**
-	 * Relative note value to the key (0 - 6)
+	 * Relative note value to the key (0 - 11) in semitones
 	 */
 	private int pitch;
-
-	/**
-	 * Absolute frequency
-	 */
-	private float frequency;
 
 	/**
 	 * Duration, relative to that of a semi-breve <br>
@@ -18,31 +13,21 @@ public class Note {
 	 */
 	private float duration;
 
-	public Note(int pitch, float frequency, float duration) {
-		if (pitch < 0 || pitch > 6 || frequency < 0 || duration < 0) {
+	public Note(int pitch, float duration) {
+		if (pitch < 0 || pitch > 6 || duration < 0) {
 			throw new IllegalArgumentException();
 		}
 		this.pitch = pitch;
-		this.frequency = frequency;
 		this.duration = duration;
 	}
 
 	// A get method for all properties.
 	public Object[] getList() {
-		return new Object[]{pitch, frequency, duration};
-	}
-
-	public float getFrequency() {
-		return frequency;
+		return new Object[]{pitch, duration};
 	}
 
 	public float getDuration() {
 		return duration;
-	}
-
-	public Note setFrequency(float frequency) {
-		this.frequency = frequency;
-		return this;
 	}
 
 	public Note setDuration(float duration) {
@@ -54,7 +39,8 @@ public class Note {
 		return pitch;
 	}
 
-	public void setPitch(int pitch) {
+	public Note setPitch(int pitch) {
 		this.pitch = pitch;
+		return this;
 	}
 }

@@ -10,14 +10,15 @@ public class Key {
 	static {
 		// Populates array with all major keys
 		for (int i = 0; i < keys_major.length; i++) {
-			keys_major[i] = new Key(440F * (float) Math.pow(2, (i - 9) / 12F), true);
+			// keys_major[i] = new Key(440F * (float) Math.pow(2, (i - 9) / 12F), true);
+			keys_major[i] = new Key(0x3C + i, true);
 		}
 	}
 
 	/**
 	 * The absolute frequency of middle octave tonic
 	 */
-	private float freq;
+	private int tonic;
 
 	/**
 	 * Major or minor key
@@ -29,8 +30,8 @@ public class Key {
 	 */
 	private int[] tones;
 
-	public Key(float frequency, boolean major) {
-		freq = frequency;
+	public Key(int tonic, boolean major) {
+		this.tonic = tonic;
 		this.major = major;
 		if (major) {
 			tones = new int[]{0, 2, 4, 5, 7, 9, 11};
@@ -39,17 +40,17 @@ public class Key {
 		}
 	}
 
-	public float getToneFrequency(int note, int octave) {
+	public int getAbsolutePitch(int note, int octave) {
 		// Check the math
-		return (float) (440 * Math.pow(2, (12 * (octave - 4) + tones[note] - 49) / 12F));
+		return tonic + tones[note] + octave * 12;
 	}
 
 	public static Note flat(Note note) {
-		return note.setFrequency((float) (note.getFrequency() / Math.pow(2, 1 / 12)));
+		return note.setPitch(note.getPitch() - 1);
 	}
 
 	public static Note sharp(Note note) {
-		return note.setFrequency((float) (note.getFrequency() * Math.pow(2, 1 / 12)));
+		return note.setPitch(note.getPitch() + 1);
 	}
 
 }

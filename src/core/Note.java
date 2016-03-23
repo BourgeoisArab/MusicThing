@@ -19,7 +19,7 @@ public class Note {
 	private byte velocity;
 
 	public Note(int pitch, float duration, int velocity) {
-		if (pitch < 0 || pitch > 6 || duration < 0) {
+		if (pitch < 0 || pitch > 11 || duration < 0 || velocity < 0 || velocity > 127) {
 			throw new IllegalArgumentException();
 		}
 		this.pitch = (byte) pitch;

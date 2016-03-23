@@ -2,16 +2,16 @@ package core;
 
 public abstract class ParameterNote extends Note {
 
-	public ParameterNote(int pitch, float duration) {
-		super(pitch, duration);
+	public ParameterNote(int pitch, float duration, int velocity) {
+		super(pitch, duration, velocity);
 	}
 
 	public static class TimeChange extends ParameterNote {
 
 		private int[] timeSignature;
 
-		public TimeChange(int p, float d, int[] ts) {
-			super(p, d);
+		public TimeChange(int p, float d, int v, int[] ts) {
+			super(p, d, v);
 			timeSignature = ts;
 		}
 
@@ -28,8 +28,8 @@ public abstract class ParameterNote extends Note {
 
 		private Key key;
 
-		public KeyChange(int pitch, float duration, Key key) {
-			super(pitch, duration);
+		public KeyChange(int p, float d, int v, Key key) {
+			super(p, d, v);
 			this.key = key;
 		}
 

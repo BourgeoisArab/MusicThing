@@ -41,8 +41,7 @@ public class Key {
 	}
 
 	public int getAbsolutePitch(int note, int octave) {
-		// Check the math
-		return tonic + tones[note] + octave * 12;
+		return tonic + note + octave * 12;
 	}
 
 	public static Note flat(Note note) {

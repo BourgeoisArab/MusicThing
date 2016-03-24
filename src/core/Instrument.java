@@ -1,4 +1,4 @@
-package output;
+package core;
 
 public class Instrument {
 

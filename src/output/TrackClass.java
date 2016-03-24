@@ -13,6 +13,8 @@ import javax.sound.midi.ShortMessage;
 import javax.sound.midi.SysexMessage;
 import javax.sound.midi.Track;
 
+import core.Instrument;
+
 public class TrackClass {
 
 	protected Sequence s;

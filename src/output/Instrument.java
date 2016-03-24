@@ -1,4 +1,4 @@
-package gen;
+package output;
 
 public class Instrument {
 
@@ -7,7 +7,7 @@ public class Instrument {
 
 	public final int value;
 
-	public Instrument(int value) {
+	protected Instrument(int value) {
 		this.value = value;
 	}
 

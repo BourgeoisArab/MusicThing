@@ -27,6 +27,10 @@ public class Note {
 		this.velocity = (byte) velocity;
 	}
 
+	public Note(int pitch, float duration, Dynamics d) {
+		this(pitch, duration, d.value);
+	}
+
 	// A get method for all properties.
 	public Object[] getList() {
 		return new Object[]{pitch, duration, velocity};

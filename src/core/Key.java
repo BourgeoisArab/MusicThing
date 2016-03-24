@@ -18,7 +18,7 @@ public class Key {
 	/**
 	 * The absolute frequency of middle octave tonic
 	 */
-	private int tonic;
+	public final int tonic;
 
 	/**
 	 * Major or minor key
@@ -28,7 +28,7 @@ public class Key {
 	/**
 	 * Stores semitone values, relative to tonic (0) Index of this is a relative note on the scale
 	 */
-	private int[] tones;
+	public final int[] tones;
 
 	public Key(int tonic, boolean major) {
 		this.tonic = tonic;

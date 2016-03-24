@@ -19,9 +19,9 @@ public class Output {
 
 	public static class TrackClass {
 
-		Sequence s;
-		Track t = s.createTrack();
-		Instrument instrument = Instrument.piano;
+		protected Sequence s;
+		protected Track t = s.createTrack();
+		protected Instrument instrument = Instrument.piano;
 
 		public TrackClass() throws InvalidMidiDataException {
 			s = new Sequence(javax.sound.midi.Sequence.PPQ, 24);

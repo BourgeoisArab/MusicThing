@@ -12,6 +12,6 @@ public enum MetaType {
     public final int value;
 
     private MetaType(int value) {
-            this.value = value;
+        this.value = value;
     }
 }

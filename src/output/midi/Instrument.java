@@ -19,6 +19,6 @@ public enum Instrument {
      * @param value
      */
     private Instrument(int value) {
-            this.value = value;
+        this.value = value;
     }
 }

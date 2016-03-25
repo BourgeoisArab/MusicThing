@@ -13,15 +13,15 @@ import javax.sound.midi.ShortMessage;
 import javax.sound.midi.SysexMessage;
 import javax.sound.midi.Track;
 
-import core.Instrument;
+import output.midi.Instrument;
 
-public class TrackClass {
+public class _TrackClass {
 
 	protected Sequence s;
 	protected Track t;
 	protected Instrument instrument = Instrument.piano;
 
-	public TrackClass() throws InvalidMidiDataException {
+	public _TrackClass() throws InvalidMidiDataException {
 		s = new Sequence(javax.sound.midi.Sequence.PPQ, 24);
 		t = s.createTrack();
 
@@ -38,6 +38,7 @@ public class TrackClass {
 		addMessage(message(0xB0, 0x7D, 0x00), 0);
 		// **** set poly on ****
 		addMessage(message(0xB0, 0x7F, 0x00), 0);
+                
 	}
 
 	public void addMessage(MidiMessage m, long time) {

@@ -2,7 +2,7 @@ package core;
 
 import java.util.HashSet;
 
-public abstract class ParameterNote extends Note {
+public class ParameterNote extends Note {
 
 	public enum Type {
 		TIME, KEY, TEMPO;
@@ -18,7 +18,7 @@ public abstract class ParameterNote extends Note {
 		}
 	}
 
-	public void setData(Object... objects) {
+	public ParameterNote setData(Object... objects) {
 		for (Object o : objects) {
 			if (o instanceof int[]) {
 				data[0] = o;
@@ -30,6 +30,7 @@ public abstract class ParameterNote extends Note {
 				throw new IllegalArgumentException();
 			}
 		}
+		return this;
 	}
 
 	public Object getData(Type t) {

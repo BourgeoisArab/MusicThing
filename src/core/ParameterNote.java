@@ -14,20 +14,20 @@ public class ParameterNote extends Note {
     public ParameterNote(int pitch, float duration, int velocity, Type... t) {
         super(pitch, duration, velocity);
         for (Type i : t) {
-                types.add(i);
+            types.add(i);
         }
     }
 
     public ParameterNote setData(Object... objects) {
         for (Object o : objects) {
             if (o instanceof int[]) {
-                    data[0] = o;
+                data[0] = o;
             } else if (o instanceof Key) {
-                    data[1] = o;
+                data[1] = o;
             } else if (o instanceof Integer) {
-                    data[2] = o;
+                data[2] = o;
             } else {
-                    throw new IllegalArgumentException();
+                throw new IllegalArgumentException();
             }
         }
         return this;

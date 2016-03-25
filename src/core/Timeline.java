@@ -1,7 +1,7 @@
 package core;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.List;
 
 public class Timeline {
@@ -10,7 +10,7 @@ public class Timeline {
 
     public Timeline() {
         timeline = new ArrayList<>();
-        // timeline.add(new Note(1,1,1));
+        // timeline.add(Arrays.asList(new Note(1,1,1)));
         t = 0;
     }
 

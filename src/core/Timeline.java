@@ -7,15 +7,15 @@ import java.util.List;
 public class Timeline {
 
 	private int t;
-	public List<Note> timeline;
+	public List<List<Note>> timeline;
 
 	public Timeline() {
-		timeline = new ArrayList<Note>();
+		timeline = new ArrayList<>();
 		// timeline.add(new Note(1,1,1));
 		t = 0;
 	}
 
-	public Note NextNote() {
+	public List<Note> NextNote() {
 		return timeline.isEmpty() ? null : timeline.get(t++);
 	}      
 }

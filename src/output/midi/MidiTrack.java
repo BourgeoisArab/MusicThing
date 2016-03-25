@@ -16,6 +16,7 @@ public class MidiTrack  {
     
     // Extended track methods **
     
+    // To be changed
     public void SetTempo() throws InvalidMidiDataException {
         addMessage(message(MetaType.Tempo, new byte[]{0x02, (byte) 0x00, 0x00}), 0);
     }

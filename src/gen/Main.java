@@ -12,14 +12,15 @@ public class Main {
                 Key k = Key.keys_major[5];
 		Note n = new Note(0, 1, Dynamics.f);
 		//TrackClass t = new TrackClass();
-		
+		s.track.setTrackName("Testificate over 9000");
+                s.track.SetTempo(); 
 		s.track.setInstrument(Instrument.marimba, 0);
 		s.track.addNote(0x3C, 80, 240, 1);
 		s.track.addNote(0x3F, 80, 240, 1);
 		s.track.addNote(0x42, 80, 240, 1);
 		s.track.addNote(0x45, 80, 240, 1);
 		s.track.endTrack(250);
-		Output.write(s,"C:\\Dev\\music\\MusicThingy\\midifile.mid");
+		Output.write(s,"C:\\Users\\Admin\\Documents\\midifile.mid");
                 
                 
 	}

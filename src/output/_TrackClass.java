@@ -45,6 +45,14 @@ public class _TrackClass {
 		t.add(new MidiEvent(m, time));
 	}
 
+	public void addMessage(int data1, byte[] data, int length, long time) throws InvalidMidiDataException {
+		addMessage(message(data1, data, length), time);
+	}
+
+	public void addMessage(int status, int data1, int data2, long time) throws InvalidMidiDataException {
+		addMessage(message(status, data1, data2), time);
+	}
+
 	public void setTrackName(String name) throws InvalidMidiDataException {
 		addMessage(message(0x03, name.getBytes(), name.length()), 0);
 	}
@@ -69,8 +77,8 @@ public class _TrackClass {
 	}
 
 	public void addNote(int pitch, int velocity, int duration, long time) throws InvalidMidiDataException {
-		addMessage(message(ShortMessage.NOTE_ON, pitch, velocity), time);
-		addMessage(message(ShortMessage.NOTE_OFF, pitch, velocity), time + duration);
+		addMessage(ShortMessage.NOTE_ON, pitch, velocity, time);
+		addMessage(ShortMessage.NOTE_OFF, pitch, velocity, time + duration);
 	}
 
 	public void addNote(int pitch, int velocity, int duration, long time, Instrument i) throws InvalidMidiDataException {

@@ -4,6 +4,6 @@ A truly remarkable product which will return the feel of originality back to you
 
 Tune in with your family and become a happy person once again!
 
-Our outstanding algorithms you won't let know fear or boredom!
+Our outstanding algorithms won't let you know fear or boredom!
 
 Try out now! Limited offer

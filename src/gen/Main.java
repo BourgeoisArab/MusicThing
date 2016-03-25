@@ -16,7 +16,7 @@ public class Main {
 		TrackClass t = new TrackClass();
 		Key k = Key.keys_major[5];
 		Note n = new Note(0, 1, Dynamics.f);
-		t.setInstrument(Instrument.guitar, 0);
+		t.setInstrument(Instrument.marimba, 0);
 		t.addNote(0x3C, 80, 240, 1);
 		t.addNote(0x3F, 80, 240, 1);
 		t.addNote(0x42, 80, 240, 1);

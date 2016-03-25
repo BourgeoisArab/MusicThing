@@ -1,45 +1,45 @@
 package core;
 
+import java.util.HashSet;
+
 public abstract class ParameterNote extends Note {
 
-	public ParameterNote(int pitch, float duration, int velocity) {
+	public enum Type {
+		TIME, KEY, TEMPO;
+	}
+
+	public final HashSet<Type> types = new HashSet<Type>();
+	private Object[] data = new Object[3];
+
+	public ParameterNote(int pitch, float duration, int velocity, Type... t) {
 		super(pitch, duration, velocity);
-	}
-
-	public static class TimeChange extends ParameterNote {
-
-		private int[] timeSignature;
-
-		public TimeChange(int p, float d, int v, int[] ts) {
-			super(p, d, v);
-			timeSignature = ts;
-		}
-
-		public int[] GetTimeSig() {
-			return timeSignature;
-		}
-
-		public void SetTimeSig(int[] ts) {
-			timeSignature = ts;
+		for (Type i : t) {
+			types.add(i);
 		}
 	}
 
-	public static class KeyChange extends ParameterNote {
+	public void setData(Object... objects) {
+		for (Object o : objects) {
+			if (o instanceof int[]) {
+				data[0] = o;
+			} else if (o instanceof Key) {
+				data[1] = o;
+			} else if (o instanceof Integer) {
+				data[2] = o;
+			} else {
+				throw new IllegalArgumentException();
+			}
+		}
+	}
 
-		private Key key;
-
-		public KeyChange(int p, float d, int v, Key key) {
-			super(p, d, v);
-			this.key = key;
+	public Object getData(Type t) {
+		if (!types.contains(t)) {
+			System.out.println("ParameterNote object is not of type " + t);
+			return null;
+		} else {
+			return data[t.ordinal()];
 		}
 
-		public Key GetKey() {
-			return key;
-		}
-
-		public void SetKey(Key k) {
-			key = k;
-		}
 	}
 
 }

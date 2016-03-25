@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class ParameterNote extends Note {
 
 	public enum Type {
-		TIME, KEY, TEMPO;
+            TIME, KEY, TEMPO;
 	}
 
 	public final HashSet<Type> types = new HashSet<Type>();

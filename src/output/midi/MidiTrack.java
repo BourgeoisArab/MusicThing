@@ -69,9 +69,7 @@ public class MidiTrack  {
         return m;
     }
     private ShortMessage message(int eventcode, int data1) throws InvalidMidiDataException {
-        ShortMessage m = new ShortMessage();
-        m.setMessage(eventcode, data1, 0x00);
-        return m;
+        return message(eventcode, data1, 0x00);
     }
     
 }

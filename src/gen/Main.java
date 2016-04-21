@@ -40,6 +40,6 @@ public class Main {
 		}
 
 		s.track.endTrack(notes.size() * 50 + 150);
-		Output.write(s, "C:\\Dev\\music\\MusicThingy\\midifile.mid");
+		Output.write(s, "C:\\Users\\Admin\\Documents\\midifile.mid");
 	}
 }

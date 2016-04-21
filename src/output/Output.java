@@ -35,6 +35,11 @@ public class Output {
 	}
 
 	public int getAbsDuration(float duration, int[] timesig, int tempo) {
-		return (int) (duration * timesig[1] * 60 * tps / tempo);
+		//return (int) (duration * timesig[1] * 60 * tps / tempo);
+                /*float qDuration = duration * timesig[1];
+                float tempoRatio = 60.0F  / (float)tempo;
+                System.out.println(tempoRatio);
+                return (int)( qDuration * tempoRatio * 10e3 / tps);*/
+                return (int)( duration * timesig[1] * 60e3 / tempo / tps );
 	}
 }

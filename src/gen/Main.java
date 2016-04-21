@@ -17,7 +17,9 @@ import core.Note;
 public class Main {
 
 	public static void main(String[] args) throws InvalidMidiDataException, IOException {
-		MidiSequence s = new MidiSequence();
+		System.out.println(new Output().getAbsDuration(0.25F, new int[]{4,4}, 120));
+                /*
+                MidiSequence s = new MidiSequence();
 		Key k = Key.keys_major[0];
 		List<Note> notes = new ArrayList<Note>();
 		s.track.setTrackName("Testificate over 9000");
@@ -40,6 +42,6 @@ public class Main {
 		}
 
 		s.track.endTrack(notes.size() * 50 + 150);
-		Output.write(s, "C:\\Users\\Admin\\Documents\\midifile.mid");
+                Output.write(s, "C:\\Users\\RAMPAGE-PC\\Desktop\\midifile.mid");*/
 	}
 }

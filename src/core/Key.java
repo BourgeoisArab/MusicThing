@@ -76,7 +76,7 @@ public class Key {
 	}
 
 	public Note getRelNote(Note n, Interval interval, boolean scale) {
-		return getRelNote(n, interval.value, scale);
+		return getRelNote(n, interval.value(), scale);
 	}
 
 	/**

@@ -24,7 +24,7 @@ public class MidiTrack {
 
 	// To be changed
 	public void SetTempo(long time) throws InvalidMidiDataException {
-		addMessage(message(MetaType.Tempo, new byte[]{0x02, (byte) 0x00, 0x00}), time);
+		addMessage(message(MetaType.Tempo, new byte[]{0x02, (byte) 0x40, 0x00}), time);
 	}
 
 	public void setTrackName(String name) throws InvalidMidiDataException {

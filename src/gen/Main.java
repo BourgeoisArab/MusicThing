@@ -27,7 +27,7 @@ public class Main {
 		notes.add(new Note(0, 1, Dynamics.f));
 		// Way up
 		for (int i = 1; i < Key.semitones; i++) {
-			notes.add(k.getRelNote(notes.get(i - 1), Interval.m2, false));
+			notes.add(k.getRelNote(notes.get(i - 1), Interval.m2, true));
 		}
 		// Way down
 		for (int i = notes.size() - 1; i > 0; i--) {

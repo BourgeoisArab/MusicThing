@@ -13,7 +13,7 @@ public class Output {
 	/**
 	 * Ticks per second
 	 */
-	public static final float tps = 2.604F;
+	public static final float tps = 2.604e-3F;
 
 	// Middle layer between data structure and TrackClass
 	// Dealing with parameter notes
@@ -30,16 +30,16 @@ public class Output {
 	 * @param tempo
 	 * @return number of midi ticks for which the note lasts
 	 */
-	public int getAbsDuration(Note n, int[] timesig, int tempo) {
-		return getAbsDuration(n.duration, timesig, tempo);
+	public int getTickDuration(Note n, int[] timesig, int tempo) {
+		return getTickDuration(n.duration, timesig, tempo);
 	}
 
-	public int getAbsDuration(float duration, int[] timesig, int tempo) {
+	public int getTickDuration(float duration, int[] timesig, int tempo) {
 		//return (int) (duration * timesig[1] * 60 * tps / tempo);
                 /*float qDuration = duration * timesig[1];
                 float tempoRatio = 60.0F  / (float)tempo;
                 System.out.println(tempoRatio);
                 return (int)( qDuration * tempoRatio * 10e3 / tps);*/
-                return (int)( duration * timesig[1] * 60e3 / tempo / tps );
+                return (int)( duration * timesig[1] * 60 / tempo / tps );
 	}
 }

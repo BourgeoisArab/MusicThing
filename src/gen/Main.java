@@ -17,7 +17,7 @@ import core.Note;
 public class Main {
 
 	public static void main(String[] args) throws InvalidMidiDataException, IOException {
-		System.out.println(new Output().getTickDuration(0.25F, new int[]{4,4}, 120));
+		System.out.println(new MidiSequence().getTickDuration(0.25F, new int[]{4,4}, 120));
                 /*
                 MidiSequence s = new MidiSequence();
 		Key k = Key.keys_major[0];

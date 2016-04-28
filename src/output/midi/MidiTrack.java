@@ -13,43 +13,43 @@ public class MidiTrack {
 	private Track track;
 
 	public Track getTrack() {
-		return track;
+            return track;
 	}
 
 	public MidiTrack(Track t) {
-		track = t;
+            track = t;
 	}
 
 	// Extended track methods **
 
 	// To be changed
 	public void SetTempo(long time) throws InvalidMidiDataException {
-		addMessage(message(MetaType.Tempo, new byte[]{0x02, (byte) 0x40, 0x00}), time);
+            addMessage(message(MetaType.Tempo, new byte[]{0x02, (byte) 0x40, 0x00}), time);
 	}
 
 	public void setTrackName(String name) throws InvalidMidiDataException {
-		addMessage(message(MetaType.TrackName, name.getBytes()), 0);
+            addMessage(message(MetaType.TrackName, name.getBytes()), 0);
 	}
 
 	public void addNote(int pitch, int velocity, int duration, long time) throws InvalidMidiDataException {
-		if (pitch < 0 || pitch > 127 || velocity < 0 || velocity > 127 || duration < 0 || time < 0) {
-			throw new IllegalArgumentException();
-		}
-		addMessage(message(ShortMessage.NOTE_ON, pitch, velocity), time);
-		addMessage(message(ShortMessage.NOTE_OFF, pitch, velocity), time + duration);
+            if (pitch < 0 || pitch > 127 || velocity < 0 || velocity > 127 || duration < 0 || time < 0) {
+                throw new IllegalArgumentException();
+            }
+            addMessage(message(ShortMessage.NOTE_ON, pitch, velocity), time);
+            addMessage(message(ShortMessage.NOTE_OFF, pitch, velocity), time + duration);
 	}
 
 	public void addNote(int pitch, int velocity, int duration, long time, Instrument i) throws InvalidMidiDataException {
-		Instrument current = instrument;
-		setInstrument(i, time);
-		addNote(pitch, velocity, duration, time);
-		setInstrument(current, time);
+            Instrument current = instrument;
+            setInstrument(i, time);
+            addNote(pitch, velocity, duration, time);
+            setInstrument(current, time);
 	}
 
 	public void setInstrument(Instrument i, long time) throws InvalidMidiDataException {
 		if (i != null && i != instrument) {
-			addMessage(message(0xC0, i.value), time);
-			instrument = i;
+                    addMessage(message(0xC0, i.value), time);
+                    instrument = i;
 		}
 	}
 

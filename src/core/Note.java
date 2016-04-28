@@ -19,36 +19,36 @@ public class Note {
 	public byte velocity;
 
 	public Note(int pitch, float duration, int velocity) {
-		if (duration < 0 || velocity < 0 || velocity > 127) {
-			throw new IllegalArgumentException();
-		}
-		this.pitch = (byte) pitch;
-		this.duration = duration;
-		this.velocity = (byte) velocity;
+            if (duration < 0 || velocity < 0 || velocity > 127) {
+                throw new IllegalArgumentException();
+            }
+            this.pitch = (byte) pitch;
+            this.duration = duration;
+            this.velocity = (byte) velocity;
 	}
 
 	public Note(int pitch, int octave, float duration, int velocity) {
-		this(pitch + octave * Key.semitones, duration, velocity);
+            this(pitch + octave * Key.semitones, duration, velocity);
 	}
 
 	public Note(int pitch, int octave, float duration, Dynamics d) {
-		this(pitch, octave, duration, d.value);
+            this(pitch, octave, duration, d.value);
 	}
 
 	public Note(int pitch, float duration, Dynamics d) {
-		this(pitch, duration, d.value);
+            this(pitch, duration, d.value);
 	}
 
 	// A get method for all properties.
 	public Object[] getList() {
-		return new Object[]{pitch, duration, velocity};
+            return new Object[]{pitch, duration, velocity};
 	}
 
 	public int getAbsPitch(Key k) {
-		return k.getAbsPitch(pitch);
+            return k.getAbsPitch(pitch);
 	}
 
 	public Note copy() {
-		return new Note(pitch, duration, velocity);
+            return new Note(pitch, duration, velocity);
 	}
 }

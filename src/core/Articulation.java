@@ -1,6 +1,8 @@
 package core;
 
 public enum Articulation {
-	stacatto;
-
+    stacatto,
+    marcato,
+    staccato,
+    legato;
 }
